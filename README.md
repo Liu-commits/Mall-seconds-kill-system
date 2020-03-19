@@ -1,13 +1,14 @@
-Java�̳���ɱϵͳ<br/>
-�����б�:<br/>
-SpringBoot(����ϵͳ�ĵ��)<br/>
-SpringMVC+MyBatis+Jsp(���ڹ���һ��������ϵͳ)
-�ֲ�ʽ����ʵ����Ӧ��(����߲������̶߳Թ�����Դ�������ʴ����İ�ȫ����)<br/>
-Redis(�����м�����������ݵĻ�����ֲ�ʽ����ʵ��)<br/>
-ZooKeeper(ע�����ģ����ڷֲ�ʽ����ʵ��)<br/>
-RabbitMQ(��Ϣ�м��������ҵ��ģ���첽ͨ����ӿ�����)<br/>
-Mysql(��Ʒ���顢������¼����ɱ�������Ż�)<br/>
-ѩ���㷨(�ֲ�ʽΨһID�����ɷ�ʽ�����ڸ�Ч����Ψһ������㷨)<br/>
-SpringBoot�ʼ�����Lamda����ʽ��Jmeterѹ�����Ե�<br/>
+<h2>Java商城秒杀系统</h2>
+<br/>
+<b>技术列表:</b><br/>
+01、SpringBoot(整个系统的奠基)<br/>
+02、SpringMVC+MyBatis+Jsp(用于构建一个完整的系统)<br/>
+03、分布式锁的实现与应用(解决高并发多线程对共享资源并发访问带来的安全问题)<br/>
+04、Redis(缓存中间件，用于数据的缓存与分布式锁的实现)<br/>
+05、ZooKeeper(注册中心，用于分布式锁的实现)<br/>
+06、RabbitMQ(消息中间件，用于业务模块异步通信与接口限流)<br/>
+07、Mysql(商品详情、订单记录、秒杀处理的优化)<br/>
+09、雪花算法(分布式唯一ID的生成方式，用于高效生成唯一编码的算法)<br/>
+10、SpringBoot邮件服务、Lamda表达式、Jmeter压力测试等<br/>
 
 
