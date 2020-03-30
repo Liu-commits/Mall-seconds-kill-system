@@ -25,8 +25,8 @@ import javax.mail.internet.MimeMessage;
 @Service
 @EnableAsync
 public class MailService {
-
-    private static final Logger log= LoggerFactory.getLogger(MailService.class);
+    
+    private static final Logger log = LoggerFactory.getLogger(MailService.class);
 
     @Autowired
     private JavaMailSender mailSender;
@@ -69,9 +69,9 @@ public class MailService {
             messageHelper.setText(dto.getContent(),true);
 
             mailSender.send(message);
-            log.info("发送花哨邮件-发送成功!");
+            log.info("发送邮件-发送成功!");
         }catch (Exception e){
-            log.error("发送花哨邮件-发生异常： ",e.fillInStackTrace());
+            log.error("发送邮件-发生异常： ",e.fillInStackTrace());
         }
     }
 }

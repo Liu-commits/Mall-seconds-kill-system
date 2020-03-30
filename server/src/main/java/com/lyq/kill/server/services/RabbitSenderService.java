@@ -15,6 +15,9 @@ import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
+import sun.nio.cs.ext.GBK;
+
+import java.io.UnsupportedEncodingException;
 
 /**
  * RabbitMQ发送邮件服务
@@ -25,7 +28,7 @@ import org.springframework.stereotype.Service;
 public class RabbitSenderService {
 
     public static final Logger log= LoggerFactory.getLogger(RabbitSenderService.class);
-
+    
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
@@ -34,13 +37,26 @@ public class RabbitSenderService {
 
     @Autowired
     private ItemKillSuccessMapper itemKillSuccessMapper;
-
-
+    
+    public static String convertEncodingFormat(String str, String formatFrom, String FormatTo) {
+        String result = null;
+        if (!(str == null || str.length() == 0)) {
+            try {
+                result = new String(str.getBytes(formatFrom), FormatTo);
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            }
+        }
+        return result;
+    }
+    
     /**
      * 秒杀成功异步发送邮件通知消息
      */
-    public void sendKillSuccessEmailMsg(String orderNo){
-        log.info("秒杀成功异步发送邮件通知消息-准备发送消息：{}",orderNo);
+    public void sendKillSuccessEmailMsg(String orderNo) throws UnsupportedEncodingException {
+        String str = "秒杀成功异步发送邮件通知消息-准备发送消息：";
+        
+        log.info(str+"：{}",orderNo);
 
         try {
             if (StringUtils.isNotBlank(orderNo)){

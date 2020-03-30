@@ -36,14 +36,14 @@ public class RabbitReceiverService {
     /**
      * 秒杀异步邮件通知-接收消息
      */
-    @RabbitListener(queues = {"${mq.kill.item.success.email.queue}"},containerFactory = "singleListenerContainer")
+    @RabbitListener(queues = {"${mq.kill.item.success.email.queue}"},containerFactory = "multiListenerContainer")
     public void consumeEmailMsg(KillSuccessUserInfo info){
         try {
             log.info("秒杀异步邮件通知-接收消息:{}",info);
 
             //TODO:真正的发送邮件....
-            //MailDto dto=new MailDto(env.getProperty("mail.kill.item.success.subject"),"这是测试内容",new String[]{info.getEmail()});
-            //mailService.sendSimpleEmail(dto);
+//            MailDto dto=new MailDto(env.getProperty("mail.kill.item.success.subject"),"这是测试内容",new String[]{info.getEmail()});
+//            mailService.sendSimpleEmail(dto);
 
             final String content=String.format(env.getProperty("mail.kill.item.success.content"),info.getItemName(),info.getCode());
             MailDto dto=new MailDto(env.getProperty("mail.kill.item.success.subject"),content,new String[]{info.getEmail()});
