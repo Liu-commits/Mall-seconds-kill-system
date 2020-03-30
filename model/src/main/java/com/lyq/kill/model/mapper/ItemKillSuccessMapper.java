@@ -1,5 +1,6 @@
 package com.lyq.kill.model.mapper;
 
+import com.lyq.kill.model.dto.KillSuccessUserInfo;
 import com.lyq.kill.model.entity.ItemKillSuccess;
 import org.apache.ibatis.annotations.Param;
 
@@ -18,11 +19,11 @@ public interface ItemKillSuccessMapper {
 
     int updateByPrimaryKey(ItemKillSuccess record);
 
-    //int countByKillUserId(@Param("killId") Integer killId, @Param("userId") Integer userId);
+    int countByKillUserId(@Param("killId") Integer killId, @Param("userId") Integer userId);
 
-    //KillSuccessUserInfo selectByCode(@Param("code") String code);
+    KillSuccessUserInfo selectByCode(@Param("code") String code);
 
     int expireOrder(@Param("code") String code);
 
-    //List<ItemKillSuccess> selectExpireOrders();
+    List<ItemKillSuccess> selectExpireOrders();
 }

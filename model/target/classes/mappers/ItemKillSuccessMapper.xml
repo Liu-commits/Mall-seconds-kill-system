@@ -104,7 +104,7 @@
     where code = #{code,jdbcType=VARCHAR}
   </update>
 
-<!--  &lt;!&ndash;根据秒杀活动跟用户Id查询用户的抢购数量&ndash;&gt;
+  <!--&lt;!&ndash;根据秒杀活动跟用户Id查询用户的抢购数量&ndash;&gt;-->
   <select id="countByKillUserId" resultType="java.lang.Integer">
     SELECT
         COUNT(1) AS total
@@ -113,12 +113,12 @@
     WHERE
         user_id = #{userId}
     AND kill_id = #{killId}
-    &lt;!&ndash; AND `status` IN (-1, 0) &ndash;&gt;
+     AND `status` IN (-1, 0) 
     AND `status` IN (0)
-  </select>-->
+  </select>
 
   <!--根据秒杀成功后的订单编码查询-->
-  <!--<select id="selectByCode" resultType="com.lyq.kill.model.dto.KillSuccessUserInfo">
+  <select id="selectByCode" resultType="com.lyq.kill.model.dto.KillSuccessUserInfo">
     SELECT
       a.*,
       b.user_name,
@@ -130,7 +130,7 @@
       LEFT JOIN item c ON c.id = a.item_id
     WHERE a.code = #{code}
           AND b.is_active = 1
-  </select>-->
+  </select>
 
   <!--失效更新订单信息-->
   <update id="expireOrder">
