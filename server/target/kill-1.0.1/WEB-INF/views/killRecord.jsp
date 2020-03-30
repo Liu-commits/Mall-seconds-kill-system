@@ -38,7 +38,7 @@
     <table>
         <tr>
             <td><strong><input type="button" value="点击生成二维码进行支付" style="font-size: 30px;width: 1100px;height: auto;background-color: #28a4c9;"
-                               onclick="alert('支付的教程目前不在这个课程讲解哦--敬请期待lyq的微信、支付宝支付实战视频教程')"/></strong></td>
+                               onclick="alert('支付的暂未实现！')"/></strong></td>
         </tr>
     </table>
 </div>
