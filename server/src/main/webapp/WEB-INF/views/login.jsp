@@ -20,13 +20,13 @@
             <h1 align="center">这是用户登录页</h1>
 
             <form action="${ctx}/login" method="post">
-                <table align="center" border="0">
+                <table align="center" border="0" >
                     <tr>
                         <td>用户名:</td>
                         <td><input type="text" name="userName" value="${userName}"></td>
                     </tr>
                     <br/>
-                    <tr>
+                    <tr >
                         <td>密&nbsp;&nbsp;码:</td>
                         <td><input type="password" name="password"></td>
                     </tr>
